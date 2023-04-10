@@ -1,0 +1,896 @@
+{
+    "Parameters": [
+        {
+            "ParameterName": "auto_increment_increment",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "auto_increment_offset",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "autocommit",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "automatic_sp_privileges",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "avoid_temporal_upgrade",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "back_log",
+            "ParameterValue": "3000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "binlog_order_commits",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "binlog_rows_query_log_events",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "binlog_stmt_cache_size",
+            "ParameterValue": "32768",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "bulk_insert_buffer_size",
+            "ParameterValue": "4194304",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "concurrent_insert",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "connect_timeout",
+            "ParameterValue": "10",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "default_week_format",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "delayed_insert_limit",
+            "ParameterValue": "100",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "delayed_insert_timeout",
+            "ParameterValue": "300",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "delayed_queue_size",
+            "ParameterValue": "1000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "disconnect_on_expired_password",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "div_precision_increment",
+            "ParameterValue": "4",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "end_markers_in_json",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "eq_range_index_dive_limit",
+            "ParameterValue": "100",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "explicit_defaults_for_timestamp",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "flush_time",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "ft_max_word_len",
+            "ParameterValue": "84",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "ft_min_word_len",
+            "ParameterValue": "4",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "ft_query_expansion_limit",
+            "ParameterValue": "20",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "general_log",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "group_concat_max_len",
+            "ParameterValue": "1024",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "host_cache_size",
+            "ParameterValue": "644",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_adaptive_flushing",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_adaptive_flushing_lwm",
+            "ParameterValue": "10",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_adaptive_max_sleep_delay",
+            "ParameterValue": "150000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_autoextend_increment",
+            "ParameterValue": "64",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_autoinc_lock_mode",
+            "ParameterValue": "2",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_buffer_pool_dump_at_shutdown",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_buffer_pool_dump_pct",
+            "ParameterValue": "25",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_buffer_pool_instances",
+            "ParameterValue": "8",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_buffer_pool_load_at_startup",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_change_buffer_max_size",
+            "ParameterValue": "25",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_cmp_per_index_enabled",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_commit_concurrency",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_compression_failure_threshold_pct",
+            "ParameterValue": "5",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_compression_level",
+            "ParameterValue": "6",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_compression_pad_pct_max",
+            "ParameterValue": "50",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_concurrency_tickets",
+            "ParameterValue": "5000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_deadlock_detect",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_disable_sort_file_cache",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_flush_neighbors",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_flush_sync",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_cache_size",
+            "ParameterValue": "8000000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_enable_diag_print",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_enable_stopword",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_max_token_size",
+            "ParameterValue": "84",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_min_token_size",
+            "ParameterValue": "3",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_num_word_optimize",
+            "ParameterValue": "2000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_result_cache_limit",
+            "ParameterValue": "2000000000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_sort_pll_degree",
+            "ParameterValue": "2",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_ft_total_cache_size",
+            "ParameterValue": "640000000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_io_capacity",
+            "ParameterValue": "20000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_io_capacity_max",
+            "ParameterValue": "40000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_large_prefix",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_lock_wait_timeout",
+            "ParameterValue": "50",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_log_checksums",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_log_compressed_pages",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_max_dirty_pages_pct",
+            "ParameterValue": "75",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_max_dirty_pages_pct_lwm",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_max_purge_lag",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_max_purge_lag_delay",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_max_undo_log_size",
+            "ParameterValue": "1073741824",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_old_blocks_pct",
+            "ParameterValue": "37",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_old_blocks_time",
+            "ParameterValue": "1000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_online_alter_log_max_size",
+            "ParameterValue": "134217728",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_open_files",
+            "ParameterValue": "3000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_optimize_fulltext_only",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_page_cleaners",
+            "ParameterValue": "8",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_print_all_deadlocks",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_purge_batch_size",
+            "ParameterValue": "300",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_purge_rseg_truncate_frequency",
+            "ParameterValue": "128",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_purge_threads",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_random_read_ahead",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_read_ahead_threshold",
+            "ParameterValue": "56",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_read_io_threads",
+            "ParameterValue": "4",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_rollback_on_timeout",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_rollback_segments",
+            "ParameterValue": "128",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_sort_buffer_size",
+            "ParameterValue": "1048576",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_spin_wait_delay",
+            "ParameterValue": "6",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_stats_auto_recalc",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_stats_on_metadata",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_stats_persistent",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_stats_persistent_sample_pages",
+            "ParameterValue": "20",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_stats_transient_sample_pages",
+            "ParameterValue": "8",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_status_output",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_status_output_locks",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_strict_mode",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_sync_array_size",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_sync_spin_loops",
+            "ParameterValue": "30",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_table_locks",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_thread_concurrency",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_thread_sleep_delay",
+            "ParameterValue": "10000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_undo_log_truncate",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "innodb_write_io_threads",
+            "ParameterValue": "4",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "interactive_timeout",
+            "ParameterValue": "7200",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "key_cache_age_threshold",
+            "ParameterValue": "300",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "key_cache_block_size",
+            "ParameterValue": "1024",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "key_cache_division_limit",
+            "ParameterValue": "100",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "local_infile",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "lock_wait_timeout",
+            "ParameterValue": "31536000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "log_bin_use_v1_row_events",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "log_error_verbosity",
+            "ParameterValue": "2",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "log_queries_not_using_indexes",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "log_slow_admin_statements",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "log_throttle_queries_not_using_indexes",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "long_query_time",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "low_priority_updates",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "lower_case_table_names",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "master_verify_checksum",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_allowed_packet",
+            "ParameterValue": "1073741824",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_binlog_cache_size",
+            "ParameterValue": "18446744073709547520",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_binlog_stmt_cache_size",
+            "ParameterValue": "18446744073709547520",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_connect_errors",
+            "ParameterValue": "100",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_connections",
+            "ParameterValue": "8532",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_error_count",
+            "ParameterValue": "64",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_heap_table_size",
+            "ParameterValue": "67108864",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_join_size",
+            "ParameterValue": "18446744073709500000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_length_for_sort_data",
+            "ParameterValue": "1024",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_points_in_geometry",
+            "ParameterValue": "65536",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_prepared_stmt_count",
+            "ParameterValue": "16382",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_seeks_for_key",
+            "ParameterValue": "18446744073709500000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_sort_length",
+            "ParameterValue": "1024",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_sp_recursion_depth",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_user_connections",
+            "ParameterValue": "8000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "max_write_lock_count",
+            "ParameterValue": "102400",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "metadata_locks_cache_size",
+            "ParameterValue": "1024",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "min_examined_row_limit",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "myisam_sort_buffer_size",
+            "ParameterValue": "262144",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "mysql_native_password_proxy_users",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "net_buffer_length",
+            "ParameterValue": "16384",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "net_read_timeout",
+            "ParameterValue": "30",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "net_retry_count",
+            "ParameterValue": "10",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "net_write_timeout",
+            "ParameterValue": "60",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "ngram_token_size",
+            "ParameterValue": "2",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "old_passwords",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "optimizer_prune_level",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "optimizer_search_depth",
+            "ParameterValue": "62",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "optimizer_trace_limit",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "optimizer_trace_max_mem_size",
+            "ParameterValue": "16384",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "performance_schema",
+            "ParameterValue": "{LEAST(DBInstanceClassMemory/8589934592, 1)}",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "preload_buffer_size",
+            "ParameterValue": "32768",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "query_alloc_block_size",
+            "ParameterValue": "8192",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "query_cache_limit",
+            "ParameterValue": "1048576",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "query_cache_min_res_unit",
+            "ParameterValue": "1024",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "query_cache_size",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "query_cache_type",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "query_cache_wlock_invalidate",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "query_prealloc_size",
+            "ParameterValue": "8192",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "range_alloc_block_size",
+            "ParameterValue": "4096",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "range_optimizer_max_mem_size",
+            "ParameterValue": "8388608",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "read_rnd_buffer_size",
+            "ParameterValue": "360448",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "session_track_gtids",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "sha256_password_proxy_users",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "show_compatibility_56",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "show_old_temporals",
+            "ParameterValue": "0",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "slave_net_timeout",
+            "ParameterValue": "60",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "slave_type_conversions",
+            "ParameterValue": "",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "slow_launch_time",
+            "ParameterValue": "2",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "slow_query_log",
+            "ParameterValue": "1",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "sql_mode",
+            "ParameterValue": "",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "stored_program_cache",
+            "ParameterValue": "256",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "sync_master_info",
+            "ParameterValue": "10000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "sync_relay_log_info",
+            "ParameterValue": "10000",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "table_open_cache_instances",
+            "ParameterValue": "8",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "thread_cache_size",
+            "ParameterValue": "256",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "thread_stack",
+            "ParameterValue": "262144",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "tls_version",
+            "ParameterValue": "TLSv1,TLSv1.1,TLSv1.2",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "tmp_table_size",
+            "ParameterValue": "2097152",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "transaction_alloc_block_size",
+            "ParameterValue": "8192",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "transaction_prealloc_size",
+            "ParameterValue": "4096",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "updatable_views_with_limit",
+            "ParameterValue": "YES",
+            "ApplyMethod": "immediate"
+        },
+        {
+            "ParameterName": "wait_timeout",
+            "ParameterValue": "86400",
+            "ApplyMethod": "immediate"
+        }
+    ],
+    "Name": "test",
+    "Description": "ttt"
+}

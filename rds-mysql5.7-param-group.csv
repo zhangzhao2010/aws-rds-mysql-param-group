@@ -1,0 +1,412 @@
+allow-suspicious-udfs,FALSE,boolean,,"0, 1",engine-default,static,Controls whether user-defined functions that have only an xxx symbol for the main function can be loaded
+auto_generate_certs,FALSE,boolean,,"0, 1",engine-default,static,"Controls whether the server autogenerates SSL key and certificate files in the data directory, if they do not already exist."
+auto_increment_increment,TRUE,integer,,1-65535,engine-default,dynamic,"Intended for use with master-to-master replication, and can be used to control the operation of AUTO_INCREMENT columns"
+auto_increment_offset,TRUE,integer,,1-65535,engine-default,dynamic,Determines the starting point for the AUTO_INCREMENT column value
+autocommit,TRUE,boolean,,"0, 1",engine-default,dynamic,Sets the autocommit mode
+automatic_sp_privileges,TRUE,boolean,,"0, 1",engine-default,dynamic,"When this variable has a value of 1 (the default), the server automatically grants the EXECUTE and ALTER ROUTINE privileges to the creator of a stored routine, if the user cannot already execute and alter or drop the routine."
+avoid_temporal_upgrade,TRUE,boolean,,"0, 1",engine-default,dynamic,This variable controls whether ALTER TABLE implicitly upgrades temporal columns found to be in pre-5.6.4 format.
+back_log,TRUE,integer,,1-65535,engine-default,static,The number of outstanding connection requests MySQL can have
+basedir,FALSE,string,/rdsdbbin/mysql,,system,static,The MySQL installation base directory.
+binlog_cache_size,TRUE,integer,32768,4096-18446744073709547520,system,dynamic,The size of the cache to hold the SQL statements for the binary log during a transaction.
+binlog_checksum,TRUE,string,,"NONE, CRC32",engine-default,dynamic,"When enabled, this variable causes the master to write a checksum for each event in the binary log."
+binlog_error_action,TRUE,string,,"IGNORE_ERROR, ABORT_SERVER",engine-default,dynamic,Controls what happens when the server cannot write to the binary log.
+binlog_format,TRUE,string,MIXED,"ROW, STATEMENT, MIXED",system,dynamic,"Row-based, Statement-based or Mixed replication"
+binlog_group_commit_sync_delay,TRUE,integer,,0-1000000,engine-default,dynamic,Controls how many microseconds the binary log commit waits before synchronizing the binary log file to disk.
+binlog_group_commit_sync_no_delay_count,TRUE,integer,,0-1000000,engine-default,dynamic,The maximum number of transactions to wait for before aborting the current delay as specified by binlog-group-commit-sync-delay.
+binlog_gtid_simple_recovery,TRUE,boolean,,"0, 1",engine-default,static,Controls how binary logs are iterated during GTID recovery
+binlog_max_flush_queue_time,TRUE,integer,,0-100000,engine-default,dynamic,"How long in microseconds to keep reading transactions from the flush queue before proceeding with the group commit (and syncing the log to disk, if sync_binlog is greater than 0). If the value is 0 (the default), there is no timeout and the server keeps reading new transactions until the queue is empty."
+binlog_order_commits,TRUE,boolean,,"0, 1",engine-default,dynamic,"If this variable is enabled (the default), transactions are committed in the same order they are written to the binary log. If disabled, transactions may be committed in parallel."
+binlog_row_image,TRUE,string,,"full, minimal, noblob",engine-default,dynamic,Whether the server logs full or minmal rows with row-based replication.
+binlog_rows_query_log_events,TRUE,boolean,,"0, 1",engine-default,dynamic,"When enabled, it causes a MySQL 5.6.2 or later server to write informational log events such as row query log events into its binary log."
+binlog_stmt_cache_size,TRUE,integer,,4096-18446744073709547520,engine-default,dynamic,This variable determines the size of the cache for the binary log to hold nontransactional statements issued during a transaction.
+block_encryption_mode,TRUE,string,,"aes-128-ecb, aes-192-ecb, aes-256-ecb, aes-128-cbc, aes-192-cbc, aes-256-cbc",engine-default,dynamic,This variable controls the block encryption mode for block-based algorithms such as AES. It affects encryption for AES_ENCRYPT() and AES_DECRYPT().
+bulk_insert_buffer_size,TRUE,integer,,0-18446744073709547520,engine-default,dynamic,Limits the size of the MyISAM cache tree in bytes per thread.
+character-set-client-handshake,TRUE,boolean,,"0, 1",engine-default,static,Don't ignore character set information sent by the client.
+character_set_client,TRUE,string,,"big5, dec8, cp850, hp8, koi8r, latin1, latin2, swe7, ascii, ujis, sjis, hebrew, tis620, euckr, koi8u, gb2312, greek, cp1250, gbk, latin5, armscii8, utf8, cp866, keybcs2, macce, macroman, cp852, latin7, utf8mb4, cp1251, cp1256, cp1257, binary, geostd8, cp932, eucjpms",engine-default,dynamic,The character set for statements that arrive from the client.
+character_set_connection,TRUE,string,,"big5, dec8, cp850, hp8, koi8r, latin1, latin2, swe7, ascii, ujis, sjis, hebrew, tis620, euckr, koi8u, gb2312, greek, cp1250, gbk, latin5, armscii8, utf8, ucs2, cp866, keybcs2, macce, macroman, cp852, latin7, utf8mb4, cp1251, utf16, cp1256, cp1257, utf32, binary, geostd8, cp932, eucjpms",engine-default,dynamic,The character set used for literals that do not have a character set introducer and for number-to-string conversion.
+character_set_database,TRUE,string,,"big5, dec8, cp850, hp8, koi8r, latin1, latin2, swe7, ascii, ujis, sjis, hebrew, tis620, euckr, koi8u, gb2312, greek, cp1250, gbk, latin5, armscii8, utf8, ucs2, cp866, keybcs2, macce, macroman, cp852, latin7, utf8mb4, cp1251, utf16, cp1256, cp1257, utf32, binary, geostd8, cp932, eucjpms",engine-default,dynamic,The character set used by the default database.
+character_set_filesystem,TRUE,string,,"big5, dec8, cp850, hp8, koi8r, latin1, latin2, swe7, ascii, ujis, sjis, hebrew, tis620, euckr, koi8u, gb2312, greek, cp1250, gbk, latin5, armscii8, utf8, ucs2, cp866, keybcs2, macce, macroman, cp852, latin7, utf8mb4, cp1251, utf16, cp1256, cp1257, utf32, binary, geostd8, cp932, eucjpms",engine-default,dynamic,The file system character set.
+character_set_results,TRUE,string,,"big5, dec8, cp850, hp8, koi8r, latin1, latin2, swe7, ascii, ujis, sjis, hebrew, tis620, euckr, koi8u, gb2312, greek, cp1250, gbk, latin5, armscii8, utf8, ucs2, cp866, keybcs2, macce, macroman, cp852, latin7, utf8mb4, cp1251, utf16, cp1256, cp1257, utf32, binary, geostd8, cp932, eucjpms",engine-default,dynamic,The character set used for returning query results to the client.
+character_set_server,TRUE,string,,"big5, dec8, cp850, hp8, koi8r, latin1, latin2, swe7, ascii, ujis, sjis, hebrew, tis620, euckr, koi8u, gb2312, greek, cp1250, gbk, latin5, armscii8, utf8, ucs2, cp866, keybcs2, macce, macroman, cp852, latin7, utf8mb4, cp1251, utf16, cp1256, cp1257, utf32, binary, geostd8, cp932, eucjpms",engine-default,dynamic,The server's default character set.
+check_proxy_users,TRUE,boolean,,"0, 1",engine-default,dynamic,Controls whether the mysql_native_password and sha256_password built-in authentication plugins support proxy users.
+collation_connection,TRUE,string,,"big5_chinese_ci, big5_bin, dec8_swedish_ci, dec8_bin, cp850_general_ci, cp850_bin, hp8_english_ci, hp8_bin, koi8r_general_ci, koi8r_bin, latin1_german1_ci, latin1_swedish_ci, latin1_danish_ci, latin1_german2_ci, latin1_bin, latin1_general_ci, latin1_general_cs, latin1_spanish_ci, latin2_czech_cs, latin2_general_ci, latin2_hungarian_ci, latin2_croatian_ci, latin2_bin, swe7_swedish_ci, swe7_bin, ascii_general_ci, ascii_bin, ujis_japanese_ci, ujis_bin, sjis_japanese_ci, sjis_bin, hebrew_general_ci, hebrew_bin, tis620_thai_ci, tis620_bin, euckr_korean_ci, euckr_bin, koi8u_general_ci, koi8u_bin, gb2312_chinese_ci, gb2312_bin, greek_general_ci, greek_bin, cp1250_general_ci, cp1250_czech_cs, cp1250_croatian_ci, cp1250_bin, cp1250_polish_ci, gbk_chinese_ci, gbk_bin, latin5_turkish_ci, latin5_bin, armscii8_general_ci, armscii8_bin, utf8_general_ci, utf8_bin, utf8_unicode_ci, utf8_icelandic_ci, utf8_latvian_ci, utf8_romanian_ci, utf8_slovenian_ci, utf8_polish_ci, utf8_estonian_ci, utf8_spanish_ci, utf8_swedish_ci, utf8_turkish_ci, utf8_czech_ci, utf8_danish_ci, utf8_lithuanian_ci, utf8_slovak_ci, utf8_spanish2_ci, utf8_roman_ci, utf8_persian_ci, utf8_esperanto_ci, utf8_hungarian_ci, utf8_sinhala_ci, ucs2_general_ci, ucs2_bin, ucs2_unicode_ci, ucs2_icelandic_ci, ucs2_latvian_ci, ucs2_romanian_ci, ucs2_slovenian_ci, ucs2_polish_ci, ucs2_estonian_ci, ucs2_spanish_ci, ucs2_swedish_ci, ucs2_turkish_ci, ucs2_czech_ci, ucs2_danish_ci, ucs2_lithuanian_ci, ucs2_slovak_ci, ucs2_spanish2_ci, ucs2_roman_ci, ucs2_persian_ci, ucs2_esperanto_ci, ucs2_hungarian_ci, ucs2_sinhala_ci, cp866_general_ci, cp866_bin, keybcs2_general_ci, keybcs2_bin, macce_general_ci, macce_bin, macroman_general_ci, macroman_bin, cp852_general_ci, cp852_bin, latin7_estonian_cs, latin7_general_ci, latin7_general_cs, latin7_bin, utf8mb4_general_ci, utf8mb4_bin, utf8mb4_unicode_ci, utf8mb4_icelandic_ci, utf8mb4_latvian_ci, utf8mb4_romanian_ci, utf8mb4_slovenian_ci, utf8mb4_polish_ci, utf8mb4_estonian_ci, utf8mb4_spanish_ci, utf8mb4_swedish_ci, utf8mb4_turkish_ci, utf8mb4_czech_ci, utf8mb4_danish_ci, utf8mb4_lithuanian_ci, utf8mb4_slovak_ci, utf8mb4_spanish2_ci, utf8mb4_roman_ci, utf8mb4_persian_ci, utf8mb4_esperanto_ci, utf8mb4_hungarian_ci, utf8mb4_sinhala_ci, cp1251_bulgarian_ci, cp1251_ukrainian_ci, cp1251_bin, cp1251_general_ci, cp1251_general_cs, utf16_general_ci, utf16_bin, utf16_unicode_ci, utf16_icelandic_ci, utf16_latvian_ci, utf16_romanian_ci, utf16_slovenian_ci, utf16_polish_ci, utf16_estonian_ci, utf16_spanish_ci, utf16_swedish_ci, utf16_turkish_ci, utf16_czech_ci, utf16_danish_ci, utf16_lithuanian_ci, utf16_slovak_ci, utf16_spanish2_ci, utf16_roman_ci, utf16_persian_ci, utf16_esperanto_ci, utf16_hungarian_ci, utf16_sinhala_ci, cp1256_general_ci, cp1256_bin, cp1257_lithuanian_ci, cp1257_bin, cp1257_general_ci, utf32_general_ci, utf32_bin, utf32_unicode_ci, utf32_icelandic_ci, utf32_latvian_ci, utf32_romanian_ci, utf32_slovenian_ci, utf32_polish_ci, utf32_estonian_ci, utf32_spanish_ci, utf32_swedish_ci, utf32_turkish_ci, utf32_czech_ci, utf32_danish_ci, utf32_lithuanian_ci, utf32_slovak_ci, utf32_spanish2_ci, utf32_roman_ci, utf32_persian_ci, utf32_esperanto_ci, utf32_hungarian_ci, utf32_sinhala_ci, binary, geostd8_general_ci, geostd8_bin, cp932_japanese_ci, cp932_bin, eucjpms_japanese_ci, eucjpms_bin",engine-default,dynamic,The collation of the connection character set.
+collation_server,TRUE,string,,"big5_chinese_ci, big5_bin, dec8_swedish_ci, dec8_bin, cp850_general_ci, cp850_bin, hp8_english_ci, hp8_bin, koi8r_general_ci, koi8r_bin, latin1_german1_ci, latin1_swedish_ci, latin1_danish_ci, latin1_german2_ci, latin1_bin, latin1_general_ci, latin1_general_cs, latin1_spanish_ci, latin2_czech_cs, latin2_general_ci, latin2_hungarian_ci, latin2_croatian_ci, latin2_bin, swe7_swedish_ci, swe7_bin, ascii_general_ci, ascii_bin, ujis_japanese_ci, ujis_bin, sjis_japanese_ci, sjis_bin, hebrew_general_ci, hebrew_bin, tis620_thai_ci, tis620_bin, euckr_korean_ci, euckr_bin, koi8u_general_ci, koi8u_bin, gb2312_chinese_ci, gb2312_bin, greek_general_ci, greek_bin, cp1250_general_ci, cp1250_czech_cs, cp1250_croatian_ci, cp1250_bin, cp1250_polish_ci, gbk_chinese_ci, gbk_bin, latin5_turkish_ci, latin5_bin, armscii8_general_ci, armscii8_bin, utf8_general_ci, utf8_bin, utf8_unicode_ci, utf8_icelandic_ci, utf8_latvian_ci, utf8_romanian_ci, utf8_slovenian_ci, utf8_polish_ci, utf8_estonian_ci, utf8_spanish_ci, utf8_swedish_ci, utf8_turkish_ci, utf8_czech_ci, utf8_danish_ci, utf8_lithuanian_ci, utf8_slovak_ci, utf8_spanish2_ci, utf8_roman_ci, utf8_persian_ci, utf8_esperanto_ci, utf8_hungarian_ci, utf8_sinhala_ci, ucs2_general_ci, ucs2_bin, ucs2_unicode_ci, ucs2_icelandic_ci, ucs2_latvian_ci, ucs2_romanian_ci, ucs2_slovenian_ci, ucs2_polish_ci, ucs2_estonian_ci, ucs2_spanish_ci, ucs2_swedish_ci, ucs2_turkish_ci, ucs2_czech_ci, ucs2_danish_ci, ucs2_lithuanian_ci, ucs2_slovak_ci, ucs2_spanish2_ci, ucs2_roman_ci, ucs2_persian_ci, ucs2_esperanto_ci, ucs2_hungarian_ci, ucs2_sinhala_ci, cp866_general_ci, cp866_bin, keybcs2_general_ci, keybcs2_bin, macce_general_ci, macce_bin, macroman_general_ci, macroman_bin, cp852_general_ci, cp852_bin, latin7_estonian_cs, latin7_general_ci, latin7_general_cs, latin7_bin, utf8mb4_general_ci, utf8mb4_bin, utf8mb4_unicode_ci, utf8mb4_icelandic_ci, utf8mb4_latvian_ci, utf8mb4_romanian_ci, utf8mb4_slovenian_ci, utf8mb4_polish_ci, utf8mb4_estonian_ci, utf8mb4_spanish_ci, utf8mb4_swedish_ci, utf8mb4_turkish_ci, utf8mb4_czech_ci, utf8mb4_danish_ci, utf8mb4_lithuanian_ci, utf8mb4_slovak_ci, utf8mb4_spanish2_ci, utf8mb4_roman_ci, utf8mb4_persian_ci, utf8mb4_esperanto_ci, utf8mb4_hungarian_ci, utf8mb4_sinhala_ci, cp1251_bulgarian_ci, cp1251_ukrainian_ci, cp1251_bin, cp1251_general_ci, cp1251_general_cs, utf16_general_ci, utf16_bin, utf16_unicode_ci, utf16_icelandic_ci, utf16_latvian_ci, utf16_romanian_ci, utf16_slovenian_ci, utf16_polish_ci, utf16_estonian_ci, utf16_spanish_ci, utf16_swedish_ci, utf16_turkish_ci, utf16_czech_ci, utf16_danish_ci, utf16_lithuanian_ci, utf16_slovak_ci, utf16_spanish2_ci, utf16_roman_ci, utf16_persian_ci, utf16_esperanto_ci, utf16_hungarian_ci, utf16_sinhala_ci, cp1256_general_ci, cp1256_bin, cp1257_lithuanian_ci, cp1257_bin, cp1257_general_ci, utf32_general_ci, utf32_bin, utf32_unicode_ci, utf32_icelandic_ci, utf32_latvian_ci, utf32_romanian_ci, utf32_slovenian_ci, utf32_polish_ci, utf32_estonian_ci, utf32_spanish_ci, utf32_swedish_ci, utf32_turkish_ci, utf32_czech_ci, utf32_danish_ci, utf32_lithuanian_ci, utf32_slovak_ci, utf32_spanish2_ci, utf32_roman_ci, utf32_persian_ci, utf32_esperanto_ci, utf32_hungarian_ci, utf32_sinhala_ci, binary, geostd8_general_ci, geostd8_bin, cp932_japanese_ci, cp932_bin, eucjpms_japanese_ci, eucjpms_bin",engine-default,dynamic,The server's default collation.
+completion_type,TRUE,integer,,0-2,engine-default,dynamic,"The transaction completion type (0 - default, 1 - chain, 2 - release)"
+concurrent_insert,TRUE,integer,,0-2,engine-default,dynamic,Allows INSERT and SELECT statements to run concurrently for MyISAM tables that have no free blocks in the middle of the data file.
+connect_timeout,TRUE,integer,,2-31536000,engine-default,dynamic,The number of seconds that the MySQLd server waits for a connect packet before responding with Bad handshake.
+core-file,FALSE,boolean,,"0, 1",engine-default,static,Write a core file if mysqld dies.
+datadir,FALSE,string,/rdsdbdata/db/,,system,static,MySQL data directory
+default_authentication_plugin,FALSE,string,,"mysql_native_password, sha256_password",engine-default,static,The default authentication plugin
+default_password_lifetime,TRUE,integer,0,0-65535,system,dynamic,Defines the global automatic password expiration policy.
+default_storage_engine,FALSE,string,InnoDB,"InnoDB, MRG_MYISAM, BLACKHOLE, CSV, MEMORY, FEDERATED, ARCHIVE, MyISAM",system,dynamic,The default storage engine (table type).
+default_time_zone,FALSE,string,,,engine-default,static,Server current time zone
+default_tmp_storage_engine,FALSE,string,,,engine-default,dynamic,The default storage engine for TEMPORARY tables.
+default_week_format,TRUE,integer,,0-7,engine-default,dynamic,The default mode value to use for the WEEK() function.
+delay_key_write,TRUE,string,,"OFF, ON, ALL",engine-default,dynamic,Determines when keys are flushed for MyISAM tables
+delayed_insert_limit,TRUE,integer,,1-9223372036854775807,engine-default,dynamic,"After inserting delayed_insert_limit delayed rows, the INSERT DELAYED handler thread checks whether there are any SELECT statements pending. If so, it allows them to execute before continuing to insert delayed rows."
+delayed_insert_timeout,TRUE,integer,,1-31536000,engine-default,dynamic,How many seconds an INSERT DELAYED handler thread should wait for INSERT statements before terminating.
+delayed_queue_size,TRUE,integer,,1-9223372036854775807,engine-default,dynamic,"If the queue becomes full, any client that issues an INSERT DELAYED statement waits until there is room in the queue again."
+disabled_storage_engines,FALSE,string,,,engine-default,static,This variable indicates which storage engines cannot be used to create tables or tablespaces.
+disconnect_on_expired_password,TRUE,boolean,,"0, 1",engine-default,static,Controls how the server handles clients with expired passwords:
+div_precision_increment,TRUE,integer,,0-30,engine-default,dynamic,Number of digits by which to increase the scale of the result of division operations.
+end_markers_in_json,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether optimizer JSON output should add end markers.
+enforce_gtid_consistency,TRUE,string,,"OFF, WARN, ON",engine-default,static,Prevents execution of statements that cannot be logged in a transactionally safe manner
+eq_range_index_dive_limit,TRUE,integer,,0-4294967295,engine-default,dynamic,Number of equality ranges when the optimizer should switch from using index dives to index statistics.
+event_scheduler,TRUE,string,,"ON, OFF",engine-default,dynamic,Indicates the status of the Event Scheduler
+explicit_defaults_for_timestamp,TRUE,boolean,1,"0, 1",system,static,Needed for 5.6.7
+flush,FALSE,boolean,,"0, 1",engine-default,dynamic,"If ON, the server flushes all changes to disk after each SQL statement."
+flush_time,TRUE,integer,,0-31536000,engine-default,dynamic,Frees up resources and synchronize unflushed data to disk. Recommended only on systems with minimal resources.
+ft_boolean_syntax,FALSE,string,,,engine-default,dynamic,The list of operators supported by boolean full-text searches
+ft_max_word_len,TRUE,integer,,10-84,engine-default,static,Maximum length of the word to be included in a FULLTEXT index.
+ft_min_word_len,TRUE,integer,,1-84,engine-default,static,Minimum length of the word to be included in a FULLTEXT index.
+ft_query_expansion_limit,TRUE,integer,,0-1000,engine-default,static,Number of top matches to use for full-text searches performed using WITH QUERY EXPANSION.
+ft_stopword_file,TRUE,string,,/dev/null,engine-default,static,"File for Full Search Stop Words. NULL uses Default, /dev/null to disable Stop Words"
+general_log,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether the general query log is enabled
+general_log_file,FALSE,string,/rdsdbdata/log/general/mysql-general.log,,system,dynamic,Location of mysql general log.
+group_concat_max_len,TRUE,integer,,4-18446744073709547520,engine-default,dynamic,Maximum allowed result length in bytes for the GROUP_CONCAT().
+gtid-mode,TRUE,string,OFF_PERMISSIVE,"OFF, OFF_PERMISSIVE, ON_PERMISSIVE, ON",system,static,Controls whether GTID based logging is enabled and what type of transactions the logs can contain
+gtid_executed_compression_period,TRUE,integer,,0-4294967295,engine-default,dynamic,Compress the mysql.gtid_executed table each time this many transactions have taken place.
+gtid_purged,FALSE,string,,,engine-default,dynamic,The set of all GTIDs that have been purged from the binary log
+host_cache_size,TRUE,integer,,0-65536,engine-default,dynamic,The size of the internal host cache.
+init_connect,TRUE,string,,,engine-default,dynamic,String to be executed by the server for each client that connects.
+innodb_adaptive_flushing,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables InnoDB Adaptive Flushing (default=on for RDS)
+innodb_adaptive_flushing_lwm,TRUE,integer,,0-70,engine-default,dynamic,Low water mark representing percentage of redo log capacity at which adaptive flushing is enabled.
+innodb_adaptive_hash_index,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether innodb adaptive hash indexes are enabled or disabled
+innodb_adaptive_hash_index_parts,TRUE,integer,,1-512,engine-default,static,Partitions the adaptive hash index search system.
+innodb_adaptive_max_sleep_delay,TRUE,integer,,0-1000000,engine-default,dynamic,Allows InnoDB to automatically adjust the value of innodb_thread_sleep_delay up or down according to the current workload.
+innodb_autoextend_increment,TRUE,integer,,1-1000,engine-default,dynamic,The increment size (in MB) for extending the size of an auto-extending tablespace file when it becomes full
+innodb_autoinc_lock_mode,TRUE,integer,,0-2,engine-default,static,The locking mode to use for generating auto-increment values
+innodb_buffer_pool_chunk_size,TRUE,integer,,1048576-4294967295,engine-default,static,Defines the chunk size for online InnoDB buffer pool resizing operations.
+innodb_buffer_pool_dump_at_shutdown,TRUE,boolean,,"0, 1",engine-default,dynamic,Specifies whether to record the pages cached in the InnoDB buffer pool when the MySQL server is shut down.
+innodb_buffer_pool_dump_now,FALSE,boolean,,"0, 1",engine-default,dynamic,Immediately records the pages cached in the InnoDB buffer pool.
+innodb_buffer_pool_dump_pct,TRUE,integer,,1-100,engine-default,dynamic,Specifies the percentage of the most recently used pages for each buffer pool to read out and dump.
+innodb_buffer_pool_filename,FALSE,string,,,engine-default,dynamic,Specifies the file that holds the list of page numbers produced by innodb_buffer_pool_dump_at_shutdown or innodb_buffer_pool_dump_now.
+innodb_buffer_pool_instances,TRUE,integer,,1-64,engine-default,static,The number of regions that the InnoDB buffer pool is divided into
+innodb_buffer_pool_load_abort,FALSE,boolean,,"0, 1",engine-default,dynamic,Interrupts the process of restoring InnoDB buffer pool contents triggered by innodb_buffer_pool_load_at_startup or innodb_buffer_pool_load_now.
+innodb_buffer_pool_load_at_startup,TRUE,boolean,,"0, 1",engine-default,static,"Specifies that, on MySQL server startup, the InnoDB buffer pool is automatically warmed up by loading the same pages it held at an earlier time."
+innodb_buffer_pool_load_now,FALSE,boolean,,"0, 1",engine-default,dynamic,"Immediately warms up the InnoDB buffer pool by loading a set of data pages, without waiting for a server restart."
+innodb_buffer_pool_size,TRUE,integer,2147483648,5242880-18446744073709551615,user,dynamic,The size in bytes of the memory buffer innodb uses to cache data and indexes of its tables
+innodb_change_buffer_max_size,TRUE,integer,,0-50,engine-default,dynamic,"Maximum size for the InnoDB change buffer, as a percentage of the total size of the buffer pool."
+innodb_change_buffering,TRUE,string,,"inserts, deletes, purges, changes, all, none",engine-default,dynamic,Controls InnoDB change buffering
+innodb_checksum_algorithm,TRUE,string,,"crc32, innodb, none, strict_crc32, strict_innodb, strict_none",engine-default,dynamic,Specifies how to generate and verify the checksum stored in each disk block of each InnoDB tablespace.
+innodb_cmp_per_index_enabled,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables per-index compression-related statistics in the INFORMATION_SCHEMA.INNODB_CMP_PER_INDEX table.
+innodb_commit_concurrency,TRUE,integer,,0-1000,engine-default,static,The number of threads that can commit at the same time.
+innodb_compression_failure_threshold_pct,TRUE,integer,,0-100,engine-default,dynamic,Sets the cutoff point at which MySQL begins adding padding within compressed pages to avoid expensive compression failures.
+innodb_compression_level,TRUE,integer,,0-9,engine-default,dynamic,Sets the cutoff point at which MySQL begins adding padding within compressed pages to avoid expensive compression failures.
+innodb_compression_pad_pct_max,TRUE,integer,,0-75,engine-default,dynamic,"Specifies the maximum percentage that can be reserved as free space within each compressed page, allowing room to reorganize the data and modification log within the page when a compressed table or index is updated and the data might be recompressed."
+innodb_concurrency_tickets,TRUE,integer,,1-4294967295,engine-default,dynamic,Number of times a thread can enter and leave Innodb before it is subject to innodb-thread-concurrency
+innodb_data_home_dir,FALSE,string,/rdsdbdata/db/innodb,,system,static,Directory where innodb files are stored
+innodb_deadlock_detect,TRUE,boolean,,"0, 1",engine-default,dynamic,This option is used to disable deadlock detection.
+innodb_default_row_format,TRUE,string,,"DYNAMIC, COMPACT, REDUNDANT",engine-default,dynamic,Defines the default row format for InnoDB tables (including user-created InnoDB temporary tables).
+innodb_disable_sort_file_cache,TRUE,boolean,,"0, 1",engine-default,dynamic,"If enabled, this variable disables the operating system file system cache for merge-sort temporary files."
+innodb_fast_shutdown,TRUE,integer,,"0, 1, 2",engine-default,dynamic,The InnoDB shutdown mode
+innodb_file_format,TRUE,string,,"Antelope, Barracuda",engine-default,dynamic,Sets InnoDB Plug-in default file format.
+innodb_file_per_table,TRUE,boolean,1,"0, 1",system,dynamic,Use tablespaces or files for Innodb.
+innodb_fill_factor,TRUE,integer,,10-100,engine-default,dynamic,"Defines the percentage of space on each B-tree page that is filled during a sorted index build, with the remaining space reserved for future index growth."
+innodb_flush_log_at_timeout,FALSE,integer,,0-2700,engine-default,dynamic,Write and flush the logs every N seconds. This setting has an effect only when innodb_flush_log_at_trx_commit has a value of 2.
+innodb_flush_log_at_trx_commit,TRUE,integer,,0-2,engine-default,dynamic,Determines Innodb transaction durability
+innodb_flush_method,TRUE,string,O_DIRECT,O_DIRECT,system,static,Determines Innodb flush method
+innodb_flush_neighbors,TRUE,integer,,0-2,engine-default,dynamic,Specifies whether flushing a page from the InnoDB buffer pool also flushes other dirty pages in the same extent.
+innodb_flush_sync,TRUE,boolean,,"0, 1",engine-default,dynamic,Ignore the innodb_io_capacity setting to be ignored for bursts of I/O activity that occur at checkpoints.
+innodb_flushing_avg_loops,FALSE,integer,,1-1000,engine-default,dynamic,"Number of iterations for which InnoDB keeps the previously calculated snapshot of the flushing state, controlling how quickly adaptive flushing responds to changing workloads."
+innodb_force_load_corrupted,FALSE,boolean,,"0, 1",engine-default,static,Lets InnoDB load tables at startup that are marked as corrupted
+innodb_ft_aux_table,TRUE,string,,,engine-default,dynamic,Specifies the qualified name of an InnoDB table containing a FULLTEXT index.
+innodb_ft_cache_size,TRUE,integer,,0-4294967295,engine-default,static,Size of the cache that holds a parsed document in memory while creating an InnoDB FULLTEXT index.
+innodb_ft_enable_diag_print,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether to enable additional full-text search (FTS) diagnostic output.
+innodb_ft_enable_stopword,TRUE,boolean,,"0, 1",engine-default,dynamic,Specifies that a set of stopwords is associated with an InnoDB FULLTEXT index at the time the index is created.
+innodb_ft_max_token_size,TRUE,integer,,10-252,engine-default,static,Maximum length of words that are stored in an InnoDB FULLTEXT index.
+innodb_ft_min_token_size,TRUE,integer,,0-16,engine-default,static,Minimum length of words that are stored in an InnoDB FULLTEXT index.
+innodb_ft_num_word_optimize,TRUE,integer,,1-4294967295,engine-default,dynamic,Number of words to process during each OPTIMIZE TABLE operation on an InnoDB FULLTEXT index.
+innodb_ft_result_cache_limit,TRUE,integer,,1000000-4294967295,engine-default,dynamic,The InnoDB FULLTEXT search (FTS) query result cache limit (defined in bytes) per FTS query or per thread.
+innodb_ft_server_stopword_table,TRUE,string,,,engine-default,dynamic,"Name of the table containing a list of words to ignore when creating an InnoDB FULLTEXT index, in the format db_name/table_name."
+innodb_ft_sort_pll_degree,TRUE,integer,,1-32,engine-default,static,"Number of threads used in parallel to index and tokenize text in an InnoDB FULLTEXT index, when building a search index for a large table."
+innodb_ft_total_cache_size,TRUE,integer,,32000000-1600000000,engine-default,static,"The total memory allocated, in bytes, for the InnoDB FULLTEXT search index cache for all tables."
+innodb_ft_user_stopword_table,TRUE,string,,,engine-default,dynamic,"Name of the table containing a list of words to ignore when creating an InnoDB FULLTEXT index, in the format db_name/table_name."
+innodb_io_capacity,TRUE,integer,,100-18446744073709551615,engine-default,dynamic,The maximum number of I/O operations per second that InnoDB will perform.
+innodb_io_capacity_max,TRUE,integer,,2000-18446744073709547520,engine-default,dynamic,The limit up to which InnoDB is allowed to extend the innodb_io_capacity setting in case of emergency.
+innodb_large_prefix,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables or disables Innodb Large Prefix for Keys
+innodb_lock_wait_timeout,TRUE,integer,,1-1073741824,engine-default,dynamic,Timeout in seconds an innodb transaction may wait for a row lock before giving up
+innodb_log_buffer_size,TRUE,integer,8388608,262144-4294967295,system,static,The size in bytes of the buffer that innodb uses to write to the log files on disk
+innodb_log_checksums,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables or disables checksums for redo log pages.
+innodb_log_compressed_pages,TRUE,boolean,,"0, 1",engine-default,dynamic,Specifies whether images of re-compressed pages are stored in InnoDB redo logs.
+innodb_log_file_size,TRUE,integer,134217728,128000000-274877906944,system,static,The size in bytes of each log file in a log group
+innodb_log_group_home_dir,FALSE,string,/rdsdbdata/log/innodb,,system,static,The directory path to the innodb log files
+innodb_log_write_ahead_size,TRUE,integer,,512-16384,engine-default,dynamic,"The write-ahead block size for the redo log, in bytes."
+innodb_lru_scan_depth,TRUE,integer,,100-18446744073709551615,engine-default,dynamic,A parameter that influences the algorithms and heuristics for the flush operation for the InnoDB buffer pool.
+innodb_max_dirty_pages_pct,TRUE,integer,,0-99,engine-default,dynamic,Maximum percentage of dirty pages in the buffer pool
+innodb_max_dirty_pages_pct_lwm,TRUE,float,,0-99.99,engine-default,dynamic,Low water mark representing percentage of dirty pages where preflushing is enabled to control the dirty page ratio.
+innodb_max_purge_lag,TRUE,integer,,0-4294967295,engine-default,dynamic,"Controls how to delay INSERT, UPDATE, and DELETE operations when purge operations are lagging"
+innodb_max_purge_lag_delay,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,Specifies the maximum delay in milliseconds for the delay imposed by the innodb_max_purge_lag configuration option
+innodb_max_undo_log_size,TRUE,integer,,10485760-18446744073709551615,engine-default,dynamic,Defines a threshold size for undo tablespaces.
+innodb_monitor_disable,TRUE,string,,,engine-default,dynamic,Turns off one or more counters in the information_schema.innodb_metrics table.
+innodb_monitor_enable,TRUE,string,,,engine-default,dynamic,Turns on one or more counters in the information_schema.innodb_metrics table.
+innodb_monitor_reset,TRUE,string,,,engine-default,dynamic,Resets to zero the count value for one or more counters in the information_schema.innodb_metrics table.
+innodb_monitor_reset_all,TRUE,string,,,engine-default,dynamic,"Resets all values (minimum, maximum, and so on) for one or more counters in the information_schema.innodb_metrics table."
+innodb_old_blocks_pct,TRUE,integer,,5-95,engine-default,dynamic,Specifies the approximate percentage of the InnoDB buffer pool used for the old block sublist.
+innodb_old_blocks_time,TRUE,integer,,0-4294967295,engine-default,dynamic,Specifies how long in milliseconds (ms) a block inserted into the old sublist must stay there after its first access before it can be moved to the new sublist.
+innodb_online_alter_log_max_size,TRUE,integer,,65536-18446744073709551615,engine-default,dynamic,Specifies an upper limit on the size of the temporary log files used during online DDL operations for InnoDB tables.
+innodb_open_files,TRUE,integer,,"-1, 10-4294967295",engine-default,static,Relevant only if you use multiple tablespaces in innodb. It specifies the maximum number of .ibd files that innodb can keep open at one time
+innodb_optimize_fulltext_only,TRUE,boolean,,"0, 1",engine-default,dynamic,Changes the way the OPTIMIZE TABLE statement operates on InnoDB tables.
+innodb_page_cleaners,TRUE,integer,,1-64,engine-default,static,The number of page cleaner threads that flush dirty pages from buffer pool instances.
+innodb_page_size,FALSE,string,,,engine-default,static,Specifies the page size for all InnoDB tablespaces in a MySQL instance.
+innodb_print_all_deadlocks,TRUE,boolean,,"0, 1",engine-default,dynamic,"When this option is enabled, information about all deadlocks in InnoDB user transactions is recorded in the mysqld error log."
+innodb_purge_batch_size,TRUE,integer,,1-5000,engine-default,dynamic,"The granularity of changes, expressed in units of redo log records, that trigger a purge operation, flushing the changed buffer pool blocks to disk"
+innodb_purge_rseg_truncate_frequency,TRUE,integer,,1-128,engine-default,dynamic,Defines the frequency with which the purge system frees rollback segments.
+innodb_purge_threads,TRUE,integer,1,1-32,system,static,The number of background threads devoted to the InnoDB purge operation
+innodb_random_read_ahead,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables or disables Innodb Random Read Ahead
+innodb_read_ahead_threshold,TRUE,integer,,0-64,engine-default,dynamic,Controls the sensitivity of linear read-ahead that InnoDB uses to prefetch pages into the buffer cache.
+innodb_read_io_threads,TRUE,integer,,1-64,engine-default,static,The number of I/O threads for read operations in InnoDB.
+innodb_read_only,FALSE,boolean,,"0, 1",engine-default,static,Starts the server in read-only mode.
+innodb_replication_delay,TRUE,integer,,0-4294967295,engine-default,dynamic,The replication thread delay (in ms) on a slave server if innodb_thread_concurrency is reached.
+innodb_rollback_on_timeout,TRUE,boolean,,"0, 1",engine-default,static,Controls whether timeouts rollback the last statement or the entire transaction
+innodb_rollback_segments,TRUE,integer,,1-128,engine-default,dynamic,Defines how many of the rollback segments in the system tablespace that InnoDB uses within a transaction.
+innodb_sort_buffer_size,TRUE,integer,,65536-67108864,engine-default,static,Specifies the sizes of several buffers used for sorting data during creation of an InnoDB index.
+innodb_spin_wait_delay,TRUE,integer,,0-4294967295,engine-default,dynamic,The maximum delay between polls for a spin lock.
+innodb_stats_auto_recalc,TRUE,boolean,,"0, 1",engine-default,dynamic,Causes InnoDB to automatically recalculate persistent statistics after the data in a table is changed substantially.
+innodb_stats_method,TRUE,string,,"nulls_equal, nulls_unequal, nulls_ignored",engine-default,dynamic,How the server treats NULL values when collecting statistics about the distribution of index values for InnoDB tables.
+innodb_stats_on_metadata,TRUE,boolean,,"0, 1",engine-default,dynamic,Controls whether table and index stats are updated when getting status information via SHOW STATUS or the INFORMATION_SCHEMA
+innodb_stats_persistent,TRUE,boolean,,"OFF, ON, 0, 1",engine-default,dynamic,Specifies whether the InnoDB index statistics produced by the ANALYZE TABLE command are stored on disk.
+innodb_stats_persistent_sample_pages,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,"The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE."
+innodb_stats_transient_sample_pages,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,"The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE."
+innodb_status_output,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables or disables periodic output for the standard InnoDB Monitor.
+innodb_status_output_locks,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables or disables the InnoDB Lock Monitor.
+innodb_strict_mode,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether InnoDB returns errors rather than warnings for exceptional conditions.
+innodb_support_xa,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables two phase commit in XA transactions
+innodb_sync_array_size,TRUE,integer,,1-1024,engine-default,static,"Splits an internal data structure used to coordinate threads, for higher concurrency in workloads with large numbers of waiting threads."
+innodb_sync_spin_loops,TRUE,integer,,0-9223372036854775807,engine-default,dynamic,The number of times a thread waits for an innodb mutex to be freed before the thread is suspended
+innodb_table_locks,TRUE,boolean,,"0, 1",engine-default,dynamic,"If autocommit = 0, innodb honors LOCK TABLES"
+innodb_temp_data_file_path,FALSE,string,,,engine-default,static,"Specifies the path, file name, and file size for InnoDB temporary table tablespace data files."
+innodb_thread_concurrency,TRUE,integer,,0-1000,engine-default,dynamic,The number of threads that can enter innodb concurrently
+innodb_thread_sleep_delay,TRUE,integer,,0-9223372036854775807,engine-default,dynamic,"How long innodb threads sleep before joining the innodb queue, in microseconds."
+innodb_undo_directory,FALSE,string,,,engine-default,static,The relative or absolute directory path where InnoDB creates separate tablespaces for the undo logs
+innodb_undo_log_truncate,TRUE,boolean,,"0, 1",engine-default,dynamic,Undo tablespaces that exceed the threshold value defined by innodb_max_undo_log_size are marked for truncation.
+innodb_undo_logs,TRUE,integer,,0-128,engine-default,dynamic,Defines how many of the rollback segments in the system tablespace that InnoDB uses within a transaction.
+innodb_undo_tablespaces,FALSE,integer,,0-126,engine-default,static,"The number of tablespace files that the undo logs are divided between, when you use a non-zero innodb_undo_logs setting."
+innodb_use_native_aio,TRUE,boolean,,"0, 1",engine-default,static,Controls whether or not MySQL uses Linux native asynchronous IO.
+innodb_write_io_threads,TRUE,integer,,1-64,engine-default,static,The number of I/O threads for write operations in InnoDB.
+interactive_timeout,TRUE,integer,,1-31536000,engine-default,dynamic,Number of seconds the server waits for activity on an interactive connection before closing it.
+internal_tmp_disk_storage_engine,TRUE,string,,"MYISAM, INNODB",engine-default,dynamic,The storage engine for on-disk internal temporary tables.
+join_buffer_size,TRUE,integer,,128-18446744073709547520,engine-default,dynamic,Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible.
+keep_files_on_create,TRUE,boolean,,"0, 1",engine-default,dynamic,Suppress behavior to overwrite MyISAM file created in DATA DIRECTORY or INDEX DIRECTORY.
+key_buffer_size,TRUE,integer,16777216,8-9223372036854771712,system,dynamic,Increase the buffer size to get better index handling used for index blocks (for all reads and multiple writes).
+key_cache_age_threshold,TRUE,integer,,100-18446744073709547520,engine-default,dynamic,Controls the demotion of buffers from the hot sub-chain of a key cache to the warm sub-chain. Lower values cause demotion to happen more quickly.
+key_cache_block_size,TRUE,integer,,512-16384,engine-default,dynamic,Size in bytes of blocks in the key cache.
+key_cache_division_limit,TRUE,integer,,1-100,engine-default,dynamic,The division point between the hot and warm sub-chains of the key cache buffer chain. The value is the percentage of the buffer chain to use for the warm sub-chain.
+lc_time_names,TRUE,string,,"ar_AE, ar_BH, ar_DZ, ar_EG, ar_IN, ar_IQ, ar_JO, ar_KW, ar_LB, ar_LY, ar_MA, ar_OM, ar_QA, ar_SA, ar_SD, ar_SY, ar_TN, ar_YE, be_BY, bg_BG, ca_ES, cs_CZ, da_DK, de_AT, de_BE, de_CH, de_DE, de_LU, el_GR, en_AU, en_CA, en_GB, en_IN, en_NZ, en_PH, en_US, en_ZA, en_ZW, es_AR, es_BO, es_CL, es_CO, es_CR, es_DO, es_EC, es_ES, es_GT, es_HN, es_MX, es_NI, es_PA, es_PE, es_PR, es_PY, es_SV, es_US, es_UY, es_VE, et_EE, eu_ES, fi_FI, fo_FO, fr_BE, fr_CA, fr_CH, fr_FR, fr_LU, gl_ES, gu_IN, he_IL, hi_IN, hr_HR, hu_HU, id_ID, is_IS, it_CH, it_IT, ja_JP, ko_KR, lt_LT, lv_LV, mk_MK, mn_MN, ms_MY, nb_NO, nl_BE, nl_NL, no_NO, pl_PL, pt_BR, pt_PT, ro_RO, ru_RU, ru_UA, sk_SK, sl_SI, sq_AL, sr_RS, sv_FI, sv_SE, ta_IN, te_IN, th_TH, tr_TR, uk_UA, ur_PK, vi_VN, zh_CN, zh_HK, zh_TW",engine-default,dynamic,This variable specifies the locale that controls the language used to display day and month names and abbreviations.
+local_infile,TRUE,boolean,1,"0, 1",system,dynamic,Controls whetther LOCAL is supported for LOAD DATA INFILE
+lock_wait_timeout,TRUE,integer,,1-31536000,engine-default,dynamic,Specifies the timeout in seconds for attempts to acquire metadata locks
+log-bin,FALSE,string,/rdsdbdata/log/binlog/mysql-bin-changelog,,system,static,Controls binary logging.
+log_bin_trust_function_creators,TRUE,boolean,,"0, 1",engine-default,dynamic,Enforces restrictions on stored functions / triggers - logging for replication.
+log_bin_use_v1_row_events,TRUE,boolean,,"0, 1",engine-default,static,Whether MySQL writes binary log events using a Version 1 or Version 2 logging events
+log_builtin_as_identified_by_password,TRUE,boolean,,"0, 1",engine-default,dynamic,"If enabled, binary logging for CREATE USER statements involving built-in authentication plugins rewrites the statements to include an IDENTIFIED BY PASSWORD clause, and SET PASSWORD statements are logged as SET PASSWORD statements, rather than being rewritten to ALTER USER statements."
+log_error,FALSE,string,/rdsdbdata/log/error/mysql-error.log,,system,static,Location of error log.
+log_error_verbosity,TRUE,integer,,1-3,engine-default,dynamic,"Controls verbosity of the server in writing error, warning, and note messages to the error log."
+log_output,TRUE,string,TABLE,"TABLE, FILE, NONE",system,dynamic,Controls where to store query logs
+log_queries_not_using_indexes,TRUE,boolean,,"0, 1",engine-default,dynamic,Logs queries that are expected to retrieve all rows to slow query log
+log_slave_updates,FALSE,boolean,1,"0, 1",system,static,Allow for chain replication - ingression
+log_slow_admin_statements,TRUE,boolean,,"0, 1",engine-default,dynamic,Include slow administrative statements in the statements written to the slow query log.
+log_slow_slave_statements,TRUE,boolean,,"0, 1",engine-default,dynamic,"When the slow query log is enabled, this variable enables logging for queries that have taken more than long_query_time seconds to execute on the slave."
+log_statements_unsafe_for_binlog,FALSE,boolean,0,"0, 1",system,dynamic,"If error 1592 is encountered, controls whether the generated warnings are added to the error log or not."
+log_syslog,FALSE,boolean,,"0, 1",engine-default,dynamic,Whether to write error log output to syslog.
+log_syslog_facility,FALSE,string,,,engine-default,dynamic,The facility for error log output written to syslog (what type of program is sending the message).
+log_syslog_include_pid,FALSE,boolean,,"0, 1",engine-default,dynamic,Whether to include the server process ID in each line of error log output written to syslog.
+log_syslog_tag,FALSE,string,,,engine-default,dynamic,The tag to be added to the server identifier in error log output written to syslog.
+log_throttle_queries_not_using_indexes,TRUE,integer,,0-4294967295,engine-default,dynamic,Limits the number of such queries per minute that can be written to the slow query log.
+log_timestamps,TRUE,string,,"UTC, SYSTEM",engine-default,dynamic,"This variable controls the timestamp time zone of error log messages, and of general query log and slow query log messages written to files."
+log_warnings,TRUE,integer,,0-18446744073709547520,engine-default,dynamic,Controls whether to produce additional warning messages.
+long_query_time,TRUE,float,,0-31536000,engine-default,dynamic,Defines what MySQL considers long queries
+low_priority_updates,TRUE,boolean,,"0, 1",engine-default,dynamic,"INSERT, UPDATE, DELETE, and LOCK TABLE WRITE wait until no pending SELECT. Affects only storage engines that use only table-level locking (MyISAM, MEMORY, MERGE)."
+lower_case_table_names,TRUE,integer,,0-1,engine-default,static,Affects how the server handles identifier case sensitivity
+master-info-repository,TRUE,string,TABLE,"FILE, TABLE",system,static,This option causes the server to write its master info log to a file or a table.
+master_verify_checksum,TRUE,boolean,,"0, 1",engine-default,dynamic,Enabling this variable causes the master to examine checksums when reading from the binary log.
+max_allowed_packet,TRUE,integer,,16777216-1073741824,engine-default,dynamic,"This value by default is small, to catch large (possibly incorrect) packets. Must be increased if using large BLOB columns or long strings. As big as largest BLOB."
+max_binlog_cache_size,TRUE,integer,,4096-18446744073709547520,engine-default,dynamic,Maximum binlog cache size a transaction may use
+max_binlog_size,FALSE,integer,134217728,4096-1073741824,system,dynamic,Server rotates the binlog once it reaches this size
+max_binlog_stmt_cache_size,TRUE,integer,,4096-18446744073709547520,engine-default,dynamic,"If nontransactional statements within a transaction require more than this many bytes of memory, the server generates an error."
+max_connect_errors,TRUE,integer,,1-9223372036854775807,engine-default,dynamic,A host is blocked from further connections if there are more than this number of interrupted connections
+max_connections,TRUE,integer,{DBInstanceClassMemory/12582880},1-100000,system,dynamic,The number of simultaneous client connections allowed.
+max_delayed_threads,TRUE,integer,,0-16384,engine-default,dynamic,Do not start more than this number of threads to handle INSERT DELAYED statements.
+max_digest_length,TRUE,integer,1024,0-1048576,engine-default,static,The maximum number of bytes available for computing statement digests.
+max_error_count,TRUE,integer,,0-65535,engine-default,dynamic,"The maximum number of error, warning, and note messages to be stored for display."
+max_execution_time,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,"The execution timeout for SELECT statements, in milliseconds."
+max_heap_table_size,TRUE,integer,,16384-1844674407370954752,engine-default,dynamic,Maximum size to which MEMORY tables are allowed to grow.
+max_insert_delayed_threads,TRUE,integer,,0-16384,engine-default,dynamic,Synonym for max_delayed_threads
+max_join_size,TRUE,integer,,1-18446744073709551615,engine-default,dynamic,Catch SELECT statements where keys are not used properly and would probably take a long time.
+max_length_for_sort_data,TRUE,integer,,4-8388608,engine-default,dynamic,ORDER BY Optimization. The cutoff on the size of index values that determines which filesort algorithm to use.
+max_points_in_geometry,TRUE,integer,,3-3145728,engine-default,dynamic,The maximum value of the points_per_circle argument to the ST_Buffer_Strategy() function.
+max_prepared_stmt_count,TRUE,integer,,0-1048576,engine-default,dynamic,Used if the potential for denial-of-service attacks based on running the server out of memory by preparing huge numbers of statements.
+max_seeks_for_key,TRUE,integer,,1-18446744073709547520,engine-default,dynamic,A low value can force MySQL to prefer indexes instead of table scans.
+max_sort_length,TRUE,integer,,4-8388608,engine-default,dynamic,The number of bytes to use when sorting BLOB or TEXT values.
+max_sp_recursion_depth,TRUE,integer,,0-255,engine-default,dynamic,Limits the number of times a stored procedure can be called recursively minimizing the demand on thread stack space.
+max_tmp_tables,TRUE,integer,,1-9223372036854775807,engine-default,dynamic,The maximum number of temporary tables a client can keep open at the same time.
+max_user_connections,TRUE,integer,,0-4294967295,engine-default,dynamic,Maximum number of simultaneous connections allowed to any given MySQL account.
+max_write_lock_count,TRUE,integer,,1-18446744073709547520,engine-default,dynamic,"After this many write locks, allow some pending read lock requests to be processed in between."
+mecab_rc_file,FALSE,string,,"0, 1",engine-default,static,Defines the path to the mecabrc configuration file.
+metadata_locks_cache_size,TRUE,integer,,1-1048576,engine-default,static,The size of the metadata locks cache
+min_examined_row_limit,TRUE,integer,,0-18446744073709547520,engine-default,dynamic,Can be used to cause queries which examine fewer than the stated number of rows not to be logged.
+myisam_data_pointer_size,TRUE,integer,,2-7,engine-default,dynamic,"The default pointer size in bytes, to be used by CREATE TABLE for MyISAM tables when no MAX_ROWS option is specified."
+myisam_max_sort_file_size,TRUE,integer,,0-9223372036853727232,engine-default,dynamic,The maximum size of the temporary file that MySQL is allowed to use while re-creating a MyISAM index
+myisam_mmap_size,TRUE,integer,,7-922337203685477807,engine-default,static,Maximum amount of memory to use for memory mapping compressed MyISAM files
+myisam_sort_buffer_size,TRUE,integer,,4-9223372036854775807,engine-default,dynamic,Size of the buffer that is allocated when sorting MyISAM indexes during a REPAIR TABLE or when creating indexes with CREATE INDEX or ALTER TABLE.
+myisam_stats_method,TRUE,string,,"nulls_equal, nulls_unequal, nulls_ignored",engine-default,dynamic,How the server treats NULL values when collecting statistics about the distribution of index values for MyISAM tables
+myisam_use_mmap,TRUE,boolean,,"0, 1",engine-default,dynamic,Memory mapping for reading and writing MyISAM tables.
+mysql_native_password_proxy_users,TRUE,boolean,,"0, 1",engine-default,dynamic,This variable controls whether the mysql_native_password built-in authentication plugin supports proxy users.
+net_buffer_length,TRUE,integer,,1024-1048576,engine-default,dynamic,This variable should not normally be changed. For use when very little memory is available. Set it to the expected length of statements sent by clients.
+net_read_timeout,TRUE,integer,,1-31536000,engine-default,dynamic,The number of seconds to wait for more data from a TCP/IP connection before aborting the read.
+net_retry_count,TRUE,integer,,1-9223372036854775807,engine-default,dynamic,"If a read on a communication port is interrupted, retry this many times before giving up. This value should be set quite high on freebsd because internal interrupts are sent to all threads."
+net_write_timeout,TRUE,integer,,1-31536000,engine-default,dynamic,The number of seconds to wait on TCP/IP connections for a block to be written before aborting the write.
+ngram_token_size,TRUE,integer,,1-10,engine-default,static,Defines the n-gram token size for the n-gram full-text parser.
+offline_mode,FALSE,boolean,,"0, 1",engine-default,dynamic,Whether the server is in offline mode.
+old-style-user-limits,TRUE,boolean,,"0, 1",engine-default,static,Enable old-style user limits.
+old_passwords,TRUE,integer,,"0, 2",engine-default,dynamic,Force the server to generate short (pre-4.1) password hashes for new passwords. This is useful for compatibility when the server must support older client programs.
+optimizer_prune_level,TRUE,boolean,,"0, 1",engine-default,dynamic,Controls the heuristics applied during query optimization to prune less-promising partial plans from the optimizer search space.
+optimizer_search_depth,TRUE,integer,,0-62,engine-default,dynamic,The maximum depth of search performed by the query optimizer.
+optimizer_switch,TRUE,list,,"default, batched_key_access=on, batched_key_access=off, block_nested_loop=on, block_nested_loop=off, condition_fanout_filter=on, condition_fanout_filter=off, derived_merge=on, derived_merge=off, duplicateweedout=on, duplicateweedout=off, engine_condition_pushdown=on, engine_condition_pushdown=off, firstmatch=on, firstmatch=off, index_condition_pushdown=on, index_condition_pushdown=off, index_merge=on, index_merge=off, index_merge_intersection=on, index_merge_intersection=off, index_merge_sort_union=on, index_merge_sort_union=off, index_merge_union=on, index_merge_union=off, loosescan=on, loosescan=off, materialization=on, materialization=off, mrr=on, mrr=off, mrr_cost_based=on, mrr_cost_based=off, semijoin=on, semijoin=off, subquery_materialization_cost_based=on, subquery_materialization_cost_based=off, use_index_extensions=on, use_index_extensions=off",engine-default,dynamic,Controls optimizer behavior.
+optimizer_trace,TRUE,list,,"default, enabled=on, enabled=off, one_line=on, one_line=off",engine-default,dynamic,Controls how statements are traced.
+optimizer_trace_features,TRUE,list,,"default, greedy_search=on, greedy_search=off, range_optimizer=on, range_optimizer=off, dynamic_range=on, dynamic_range=off, repeated_subselect=on, repeated_subselect=off",engine-default,dynamic,Controls optimizations during statement tracing.
+optimizer_trace_limit,TRUE,integer,,1-9223372036854775807,engine-default,dynamic,Controls the limit on trace retention.
+optimizer_trace_max_mem_size,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,Maximum allowed cumulated size of stored optimizer traces
+optimizer_trace_offset,TRUE,integer,,-9223372036854775807-9223372036854775807,engine-default,dynamic,Controls the offset on trace retention.
+performance_schema,TRUE,boolean,0,"0, 1",system,static,Enables or disables the Performance Schema
+performance_schema_accounts_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the Performance Schema accounts table.
+performance_schema_digests_size,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of rows in the events_statements_summary_by_digest table.
+performance_schema_events_stages_history_long_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the events_stages_history_long table.
+performance_schema_events_stages_history_size,TRUE,integer,,-1-1024,engine-default,static,The number of rows per thread in the events_stages_history table.
+performance_schema_events_statements_history_long_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the events_statements_history_long table.
+performance_schema_events_statements_history_size,TRUE,integer,,-1-1024,engine-default,static,The number of rows per thread in the events_statements_history table.
+performance_schema_events_transactions_history_long_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the events_transactions_history_long table.
+performance_schema_events_transactions_history_size,TRUE,integer,,-1-1024,engine-default,static,The number of rows per thread in the events_transactions_history table.
+performance_schema_events_waits_history_long_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the events_waits_history_long table.
+performance_schema_events_waits_history_size,TRUE,integer,,-1-1024,engine-default,static,The number of rows per thread in the events_waits_history table.
+performance_schema_hosts_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the hosts table.
+performance_schema_max_cond_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of condition instruments.
+performance_schema_max_cond_instances,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of instrumented condition objects.
+performance_schema_max_digest_length,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of bytes available for computing statement digests.
+performance_schema_max_file_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of file instruments.
+performance_schema_max_file_handles,TRUE,integer,,0-1048576,engine-default,static,The maximum number of opened file objects.
+performance_schema_max_file_instances,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of instrumented file objects.
+performance_schema_max_index_stat,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of indexes for which the Performance Schema maintains statistics.
+performance_schema_max_memory_classes,TRUE,integer,,-1-1024,engine-default,static,The maximum number of memory instruments.
+performance_schema_max_metadata_locks,TRUE,integer,,-1-104857600,engine-default,static,The maximum number of metadata lock instruments.
+performance_schema_max_mutex_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of mutex instruments.
+performance_schema_max_mutex_instances,TRUE,integer,,-1-104857600,engine-default,static,The maximum number of instrumented mutex objects.
+performance_schema_max_prepared_statements_instances,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of rows in the prepared_statements_instances table.
+performance_schema_max_program_instances,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of stored programs for which the Performance Schema maintains statistics.
+performance_schema_max_rwlock_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of rwlock instruments.
+performance_schema_max_rwlock_instances,TRUE,integer,,-1-104857600,engine-default,static,The maximum number of instrumented rwlock objects.
+performance_schema_max_socket_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of socket instruments.
+performance_schema_max_socket_instances,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of instrumented socket objects.
+performance_schema_max_sql_text_length,TRUE,integer,,-1-1048576,engine-default,static,"The maximum number of bytes used to store SQL statements in the SQL_TEXT column of the events_statements_current, events_statements_history, and events_statements_history_long statement event tables."
+performance_schema_max_stage_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of stage instruments.
+performance_schema_max_statement_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of statement instruments.
+performance_schema_max_statement_stack,TRUE,integer,,1-256,engine-default,static,The maximum depth of nested stored program calls for which the Performance Schema maintains statistics.
+performance_schema_max_table_handles,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of opened table objects.
+performance_schema_max_table_instances,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of instrumented table objects.
+performance_schema_max_table_lock_stat,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of tables for which the Performance Schema maintains lock statistics.
+performance_schema_max_thread_classes,TRUE,integer,,0-256,engine-default,static,The maximum number of thread instruments.
+performance_schema_max_thread_instances,TRUE,integer,,-1-1048576,engine-default,static,The maximum number of instrumented thread objects.
+performance_schema_session_connect_attrs_size,TRUE,integer,,-1-1048576,engine-default,static,The amount of preallocated memory per thread used to hold connection attribute strings.
+performance_schema_setup_actors_size,TRUE,integer,,0-1024,engine-default,static,The number of rows in the setup_actors table.
+performance_schema_setup_objects_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the setup_objects table.
+performance_schema_users_size,TRUE,integer,,-1-1048576,engine-default,static,The number of rows in the users table.
+pid_file,FALSE,string,/rdsdbdata/log/mysql-{EndPointPort}.pid,,system,static,The path name of the process ID file. This file is used by other programs such as MySQLd_safe to determine the server's process ID.
+plugin_dir,FALSE,string,,,system,static,"Directory searched by systems dynamic linker for UDF object files. Otherwise, user-defined function object files must be located the default directory."
+port,FALSE,integer,{EndPointPort},,system,static,The number of the port on which the server listens for TCP/IP connections.
+preload_buffer_size,TRUE,integer,,1024-1073741824,engine-default,dynamic,The size of the buffer that is allocated when preloading indexes.
+profiling_history_size,TRUE,integer,,0-100,engine-default,dynamic,The number of statements for which to maintain profiling if profiling is enabled.
+query_alloc_block_size,TRUE,integer,,1024-4294967295,engine-default,dynamic,The allocation size of memory blocks that are allocated for objects created during statement parsing and execution. May help resolve fragmentation problems.
+query_cache_limit,TRUE,integer,,0-18446744073709547520,engine-default,dynamic,Don't cache results that are larger than this number of bytes.
+query_cache_min_res_unit,TRUE,integer,,512-18446744073709547520,engine-default,dynamic,The minimum size (in bytes) for blocks allocated by the query cache.
+query_cache_size,TRUE,integer,,0-9223372036854774784,engine-default,dynamic,The amount of memory allocated for caching query results.
+query_cache_type,TRUE,integer,,0-2,engine-default,static,"For query results either don't cache (=OFF), cache except for NO_CACHE (=ON), or only CACHE (=DEMAND)"
+query_cache_wlock_invalidate,TRUE,boolean,,"0, 1",engine-default,dynamic,Setting this variable to 1 causes acquisition of a WRITE lock for a table to invalidate any queries in the query cache that refer to the table
+query_prealloc_size,TRUE,integer,,8192-18446744073709547520,engine-default,dynamic,Increased size might help improve perf for complex queries (i.e. Reduces server memory allocation)
+range_alloc_block_size,TRUE,integer,,1024-4294967295,engine-default,dynamic,The size of blocks that are allocated when doing range optimization.
+range_optimizer_max_mem_size,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,The limit on memory consumption for the range optimizer.
+read_buffer_size,TRUE,integer,262144,8200-2147479552,system,dynamic,Each thread that does a sequential scan allocates this buffer. Increased value may help perf if performing many sequential scans.
+read_only,TRUE,boolean,{TrueIfReplica},"0, 1, {TrueIfReplica}",system,dynamic,"When it is enabled, the server permits no updates except from updates performed by slave threads."
+read_rnd_buffer_size,TRUE,integer,524288,8200-2147479552,system,dynamic,Avoids disk reads when reading rows in sorted order following a key-sort operation. Large values can improve ORDER BY perf.
+relay-log,FALSE,string,/rdsdbdata/log/relaylog/relaylog,,system,static,The basename for the relay log.
+relay_log_info_repository,TRUE,string,TABLE,"FILE, TABLE",system,static,This option causes the server to log its relay log info to a file or a table.
+relay_log_recovery,FALSE,boolean,1,"0, 1",system,dynamic,Enables automatic relay log recovery immediately following server startup.
+replicate-do-db,TRUE,list,,,engine-default,dynamic,Creates a replication filter using the name of a database
+replicate-do-table,TRUE,list,,,engine-default,dynamic,Creates a replication filter using the name of a table
+replicate-ignore-db,TRUE,list,,,engine-default,dynamic,Creates a replication ignore filter using the name of a database
+replicate-ignore-table,TRUE,list,,,engine-default,dynamic,Creates a replication ignore filter using the name of a table
+replicate-wild-do-table,TRUE,list,,,engine-default,dynamic,Creates a replication filter using the pattern of a table name
+replicate-wild-ignore-table,TRUE,list,,,engine-default,dynamic,Creates a replication ignore filter using the pattern of a table name
+require_secure_transport,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether client connections to the server are required to use some form of secure transport.
+rpl_semi_sync_master_wait_for_slave_count,FALSE,integer,,1-65535,engine-default,dynamic,The number of slave acknowledgments the master must receive per transaction before proceeding.
+rpl_semi_sync_master_wait_point,FALSE,string,,"AFTER_SYNC, AFTER_COMMIT",engine-default,dynamic,Controls the point at which a semisynchronous replication master waits for slave acknowledgment of transaction receipt before returning a status to the client that committed the transaction.
+rpl_stop_slave_timeout,FALSE,integer,,2-31536000,engine-default,dynamic,Control the length of time (in seconds) that STOP SLAVE waits before timing out by setting this variable.
+safe-user-create,TRUE,boolean,,"0, 1",engine-default,static,"If this option is enabled, a user cannot create new MySQL users by using the GRANT statement unless the user has the INSERT privilege for the mysql.user table or any column in the table."
+secure_auth,FALSE,boolean,,"0, 1",engine-default,dynamic,Blocks connections from all accounts that have passwords stored in the old (pre-4.1) format.
+secure_file_priv,FALSE,string,/tmp,,system,static,"Limits the effect of LOAD_FILE(), LOAD_DATA, and SELECT ??? INTO OUTFILE to specified directory."
+server_id,FALSE,integer,{ServerId},,system,dynamic,Integer value used to identify the instance in a replication group
+session_track_gtids,TRUE,boolean,,"0, 1",engine-default,dynamic,Enables a tracker for capturing GTIDs and returning them in the OK packet.
+session_track_schema,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether the server tracks changes to the default schema and notifies the client when changes occur.
+session_track_state_change,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether the server tracks changes to the session state and notifies the client when changes occur.
+session_track_system_variables,TRUE,list,,"time_zone, autocommit, character_set_client, character_set_results, character_set_connection",engine-default,dynamic,Whether the server tracks changes to the session system variables and notifies the client when changes occur.
+session_track_transaction_info,TRUE,string,,"OFF, STATE, CHARACTERISTICS",engine-default,dynamic,Track changes to the transaction attributes.
+sha256_password_auto_generate_rsa_keys,FALSE,boolean,,"0, 1",engine-default,static,Controls whether the server autogenerates RSA private/public key-pair files in the data directory.
+sha256_password_proxy_users,TRUE,boolean,,"0, 1",engine-default,dynamic,Controls whether the sha256_password built-in authentication plugin supports proxy users.
+show_compatibility_56,TRUE,boolean,,"0, 1",engine-default,dynamic,Enable MySQL 5.6 compatability for certain system and status variables.
+show_old_temporals,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether SHOW CREATE TABLE output includes comments to flag temporal columns found to be in pre-5.6.4 format.
+skip-character-set-client-handshake,TRUE,boolean,,"0, 1",engine-default,static,Ignore character set information sent by the client.
+skip-slave-start,FALSE,boolean,1,"0, 1",system,static,Tells the slave server not to start the slave threads when the server starts.
+skip_external_locking,FALSE,boolean,,"0, 1",engine-default,static,Uses OS locking instead of internal
+skip_name_resolve,TRUE,boolean,,"0, 1",engine-default,static,Host names are not resolved. All Host column values in the grant tables must be IP numbers or localhost.
+skip_show_database,TRUE,boolean,,"0, 1",engine-default,static,SHOW DATABASES statement is allowed only to users who have the SHOW DATABASES privilege
+slave_allow_batching,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether or not batched updates are enabled on replication slaves.
+slave_checkpoint_group,TRUE,integer,,32-524280,engine-default,dynamic,Sets the maximum number of transactions that can be processed by a multi-threaded slave before a checkpoint operation is called to update its status as shown by SHOW SLAVE STATUS.
+slave_checkpoint_period,TRUE,integer,,1-4294967295,engine-default,dynamic,Sets the maximum time (in milliseconds) that is allowed to pass before a checkpoint operation is called to update the status of a multi-threaded slave as shown by SHOW SLAVE STATUS.
+slave_compressed_protocol,TRUE,boolean,,"0, 1",engine-default,dynamic,Whether to use compression of the slave/master protocol if both the slave and the master support it.
+slave_net_timeout,TRUE,integer,,1-31536000,engine-default,dynamic,The number of seconds to wait for more data from a master/slave connection before aborting the read.
+slave_parallel_type,TRUE,string,,"DATABASE, LOGICAL_CLOCK",engine-default,static,"Enable parallel execution on the slave of all uncommitted threads already in the prepare phase, without violating consistency."
+slave_parallel_workers,TRUE,integer,,0-1024,engine-default,dynamic,Sets the number of slave worker threads for executing replication events (transactions) in parallel. Setting this variable to 0 (the default) disables parallel execution.
+slave_pending_jobs_size_max,TRUE,integer,,1024-18446744073709547520,engine-default,dynamic,"For multithreaded slaves, this option sets the maximum amount of memory (in bytes) available to slave worker queues holding events not yet applied."
+slave_preserve_commit_order,TRUE,boolean,,"0, 1",engine-default,dynamic,"Enable parallel execution on the slave of all uncommitted threads already in the prepare phase, without violating consistency."
+slave_rows_search_algorithms,TRUE,list,,"TABLE_SCAN, INDEX_SCAN, HASH_SCAN",engine-default,dynamic,"When preparing batches of rows for row-based logging and replication, this variable controls how the rows are searched for matches???that is, whether or not hashing is used for searches using a primary or unique key, using some other key, or using no key at all."
+slave_skip_errors,TRUE,list,,"OFF, all, ddl_exist_errors, <integer>",engine-default,static,This variable causes the slave SQL thread to continue replication when a statement returns any of the errors listed in the variable value.
+slave_sql_verify_checksum,TRUE,boolean,,"0, 1",engine-default,dynamic,"When this option is enabled, the slave examines checksums read from the relay log, in the event of a mismatch, the slave stops with an error."
+slave_transaction_retries,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,"If a replication slave SQL thread fails to execute a transaction because of an InnoDB deadlock or because the transaction's execution time exceeded InnoDB's innodb_lock_wait_timeout, it automatically retries slave_transaction_retries times before stopping with an error."
+slave_type_conversions,TRUE,list,,"ALL_LOSSY, ALL_NON_LOSSY, ALL_SIGNED, ALL_UNSIGNED",engine-default,static,Controls the type conversion mode in effect on the slave when using row-based replication
+slow_launch_time,TRUE,integer,,0-31536000,engine-default,dynamic,Increments Slow_launch_threads if creating thread takes longer than this many seconds.
+slow_query_log,TRUE,boolean,,"0, 1",engine-default,dynamic,Enable or disable the slow query log
+slow_query_log_file,FALSE,string,/rdsdbdata/log/slowquery/mysql-slowquery.log,,system,dynamic,Location of the mysql slow query log file.
+socket,FALSE,string,/tmp/mysql.sock,,system,static,(UNIX) socket file and (WINDOWS) named pipe used for local connections.
+sort_buffer_size,TRUE,integer,,32768-18446744073709551615,engine-default,dynamic,Larger value improves perf for ORDER BY or GROUP BY operations.
+sql_mode,TRUE,list,NO_ENGINE_SUBSTITUTION,"ALLOW_INVALID_DATES, ANSI_QUOTES, ERROR_FOR_DIVISION_BY_ZERO, HIGH_NOT_PRECEDENCE, IGNORE_SPACE, NO_AUTO_CREATE_USER, NO_AUTO_VALUE_ON_ZERO, NO_BACKSLASH_ESCAPES, NO_DIR_IN_CREATE, NO_ENGINE_SUBSTITUTION, NO_FIELD_OPTIONS, NO_KEY_OPTIONS, NO_TABLE_OPTIONS, NO_UNSIGNED_SUBTRACTION, NO_ZERO_DATE, NO_ZERO_IN_DATE, ONLY_FULL_GROUP_BY, PAD_CHAR_TO_FULL_LENGTH, PIPES_AS_CONCAT, REAL_AS_FLOAT, STRICT_ALL_TABLES, STRICT_TRANS_TABLES, ANSI, DB2, MAXDB, MSSQL, MYSQL323, MYSQL40, ORACLE, POSTGRESQL, TRADITIONAL",system,dynamic,Current SQL Server Mode.
+sql_select_limit,TRUE,integer,,0-18446744073709551615,engine-default,dynamic,The maximum number of rows to return from SELECT statements.
+ssl_cipher,TRUE,list,,"ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA, ECDHE-RSA-AES128-SHA, AES256-GCM-SHA384, AES128-GCM-SHA256, AES256-SHA, AES128-SHA, DHE-RSA-AES128-SHA, DHE-RSA-AES256-SHA, DHE-DSS-AES128-SHA, DHE-DSS-AES256-SHA",engine-default,static,The list of permissible ciphers for encrypted connections that use TLS protocols up through TLSv1.2.
+stored_program_cache,TRUE,integer,,256-524288,engine-default,dynamic,Sets a soft upper limit for the number of cached stored routines per connection.
+super_read_only,FALSE,boolean,,"0, 1",engine-default,dynamic,Whether client connections to the server are required to use some form of secure transport.
+sync_binlog,TRUE,integer,1,0-18446744073709547520,system,dynamic,Sync binlog (MySQL flush to disk or rely on OS)
+sync_frm,TRUE,boolean,,"0, 1",engine-default,dynamic,For non-temporary tables controls if .frm file is sync'ed to disk.
+sync_master_info,TRUE,integer,,0-18446744073709547520,engine-default,dynamic,"If the value of this variable is greater than 0, a replication slave synchronizes its master.info file to disk (using fdatasync()) after every sync_master_info events."
+sync_relay_log,TRUE,integer,,0-18446744073709547520,engine-default,dynamic,"If the value of this variable is greater than 0, the MySQL server synchronizes its relay log to disk (using fdatasync()) after every sync_relay_log writes to the relay log."
+sync_relay_log_info,TRUE,integer,,0-18446744073709547520,engine-default,dynamic,"If the value of this variable is greater than 0, a replication slave synchronizes its relay-log.info file to disk (using fdatasync()) after every sync_relay_log_info transactions."
+sysdate-is-now,TRUE,boolean,,"0, 1",engine-default,static,Causes SYSYDATE() to be an alias for NOW(). Replication related
+table_definition_cache,TRUE,integer,,"-1, 400-524288",engine-default,dynamic,The number of table definitions that can be stored in the definition cache
+table_open_cache,TRUE,integer,,1-524288,engine-default,dynamic,The number of open tables for all threads. Increasing this value increases the number of file descriptors.
+table_open_cache_instances,TRUE,integer,16,1-16,system,static,The number of open tables cache instances.
+temp-pool,TRUE,boolean,,"0, 1",engine-default,static,"This option causes most temporary files created by the server to use a small set of names, rather than a unique name for each new file. This works around a problem in the Linux kernel dealing with creating many new files with different names."
+thread_cache_size,TRUE,integer,,0-16384,engine-default,dynamic,Number of threads to be cached. Doesn't improve perf for good thread implementations.
+thread_stack,TRUE,integer,262144,131072-18446744073709547520,engine-default,static,"If the thread stack size is too small, it limits the complexity of the SQL statements that the server can handle, the recursion depth of stored procedures, and other memory-consuming actions."
+time_zone,TRUE,string,,"Africa/Cairo, Africa/Casablanca, Africa/Harare, Africa/Monrovia, Africa/Nairobi, Africa/Tripoli, Africa/Windhoek, America/Araguaina, America/Asuncion, America/Bogota, America/Buenos_Aires, America/Caracas, America/Chihuahua, America/Cuiaba, America/Denver, America/Fortaleza, America/Guatemala, America/Halifax, America/Manaus, America/Matamoros, America/Monterrey, America/Montevideo, America/Phoenix, America/Santiago, America/Tijuana, Asia/Amman, Asia/Ashgabat, Asia/Baghdad, Asia/Baku, Asia/Bangkok, Asia/Beirut, Asia/Calcutta, Asia/Damascus, Asia/Dhaka, Asia/Irkutsk, Asia/Jerusalem, Asia/Kabul, Asia/Karachi, Asia/Kathmandu, Asia/Krasnoyarsk, Asia/Magadan, Asia/Muscat, Asia/Novosibirsk, Asia/Riyadh, Asia/Seoul, Asia/Shanghai, Asia/Singapore, Asia/Taipei, Asia/Tehran, Asia/Tokyo, Asia/Ulaanbaatar, Asia/Vladivostok, Asia/Yakutsk, Asia/Yerevan, Atlantic/Azores, Australia/Adelaide, Australia/Brisbane, Australia/Darwin, Australia/Hobart, Australia/Perth, Australia/Sydney, Canada/Newfoundland, Canada/Saskatchewan, Canada/Yukon, Brazil/East, Europe/Amsterdam, Europe/Athens, Europe/Dublin, Europe/Helsinki, Europe/Istanbul, Europe/Kaliningrad, Europe/Moscow, Europe/Paris, Europe/Prague, Europe/Sarajevo, Pacific/Auckland, Pacific/Fiji, Pacific/Guam, Pacific/Honolulu, Pacific/Samoa, US/Alaska, US/Central, US/Eastern, US/East-Indiana, US/Pacific, UTC",engine-default,dynamic,The server time zone
+tls_version,TRUE,list,,"TLSv1, TLSv1.1, TLSv1.2",engine-default,static,The protocols permitted by the server for encrypted connections.
+tmp_table_size,TRUE,integer,,1024-18446744073709551615,engine-default,dynamic,"If an in-memory temporary table exceeds the limit, MySQL automatically converts it to an on-disk MyISAM table. Increased value can improve perf for many advanced GROUP BY queries."
+tmpdir,FALSE,string,/rdsdbdata/tmp,,system,static,The directory used for temporary files and temporary tables
+transaction_alloc_block_size,TRUE,integer,,1024-18446744073709547520,engine-default,dynamic,The amount in bytes by which to increase a per-transaction memory pool which needs memory.
+transaction_prealloc_size,TRUE,integer,,1024-18446744073709547520,engine-default,dynamic,"There is a per-transaction memory pool from which various transaction-related allocations take memory. For every allocation that cannot be satisfied from the pool because it has insufficient memory available, the pool is incremented."
+transaction_write_set_extraction,FALSE,string,,"OFF, MURMUR32",engine-default,dynamic,Reserved for future use.
+tx_isolation,TRUE,string,,"READ-UNCOMMITTED, READ-COMMITTED, REPEATABLE-READ, SERIALIZABLE",engine-default,dynamic,Sets the default transaction isolation level.
+updatable_views_with_limit,TRUE,boolean,,"0, 1",engine-default,dynamic,"This variable controls whether updates to a view can be made when the view does not contain all columns of the primary key defined in the underlying table, if the update statement contains a LIMIT clause (Often generated by GUI tools)."
+validate-password,TRUE,string,,"ON, OFF, FORCE, FORCE_PLUS_PERMANENT",engine-default,static,This option controls how the server loads the validate_password plugin at startup.
+validate_password_dictionary_file,FALSE,string,,,engine-default,static,The path name of the dictionary file used by the validate_password plugin for checking passwords.
+validate_password_length,TRUE,integer,,0-2147483647,engine-default,dynamic,The minimum number of characters that validate_password requires passwords to have.
+validate_password_mixed_case_count,TRUE,integer,,0-2147483647,engine-default,dynamic,The minimum number of lowercase and uppercase characters that passwords checked by the validate_password plugin must have if the password policy is MEDIUM or stronger.
+validate_password_number_count,TRUE,integer,,0-2147483647,engine-default,dynamic,The minimum number of numeric (digit) characters that passwords checked by the validate_password plugin must have if the password policy is MEDIUM or stronger.
+validate_password_policy,TRUE,string,,"LOW, MEDIUM, STRONG",engine-default,dynamic,The password policy enforced by the validate_password plugin.
+validate_password_special_char_count,TRUE,integer,,0-2147483647,engine-default,dynamic,The minimum number of nonalphanumeric characters that passwords checked by the validate_password plugin must have if the password policy is MEDIUM or stronger.
+wait_timeout,TRUE,integer,,1-31536000,engine-default,dynamic,The number of seconds the server waits for activity on a non-interactive TCP/IP or UNIX File connection before closing it.
