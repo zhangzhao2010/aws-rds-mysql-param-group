@@ -1,8 +1,9 @@
 import json
 import argparse
+import os
 
 def load_aws_rds_mysql_param_group():
-    with open("rds-mysql5.7-param-group.csv", 'r') as f:
+    with open(os.path.dirname(__file__) + "/rds-mysql5.7-param-group.csv", 'r') as f:
         lines = f.readlines()
     dict_params = {}
     for line in lines:
@@ -32,7 +33,7 @@ def read_file(file_name):
                     print(f"Ignoring line {line} because it is not exsit in aws params")
                     continue
                 
-                if dict_aws_params[key]["modifiable"] == "false":
+                if dict_aws_params[key]["modifiable"] == "FALSE":
                     print(f"Ignoring line {line} because it can't be changed")
                     continue
                 
@@ -49,7 +50,7 @@ def read_file(file_name):
                     elif value == "OFF":
                         value = "0"
                 
-                parameters.append({"ParameterName": key, "ParameterValue": value, "ApplyMethod": "immediate"})
+                parameters.append({"ParameterName": key, "ParameterValue": value, "ApplyMethod": "pending-reboot"})
             except ValueError:
                 print(f"Ignoring line {line} because it is not in the correct format")
     return parameters
@@ -57,9 +58,10 @@ def read_file(file_name):
 def generate_json(name, desc, file_name):
     parameters = read_file(file_name)
     data = {"Parameters": parameters}
-    data["Name"] = name
-    data["Description"] = desc
-    with open('output.json', 'w') as f:
+    data["DBParameterGroupName"] = name
+    # data["Description"] = desc
+    output_file = f'{os.path.dirname(os.path.dirname(os.path.realpath(__file__)))}/output/{name}-{file_name}.json'
+    with open(output_file, 'w') as f:
         json.dump(data, f, indent=4)
 
 parser = argparse.ArgumentParser(description='need --name, --desc, --file_name')

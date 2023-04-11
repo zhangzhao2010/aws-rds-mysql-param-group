@@ -65,4 +65,7 @@ if __name__ == '__main__':
     name = "example"
     desc = "This is an example"
     file_name = "rds_param.txt"
-    generate_json(name, desc, file_name)
+    # generate_json(name, desc, file_name)
+
+    print("Not complete yet.")
+    exit(0)
