@@ -1,5 +1,5 @@
 # aws-rds-mysql-param-group
-create rds mysql param group with a file
+create rds mysql param group with a aliyun param file
 
 # PrePrerequisites
 https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html
