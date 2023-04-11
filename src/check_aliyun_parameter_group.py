@@ -1,7 +1,10 @@
+#!/usr/bin/python3
 import json
+import os
+import argparse
 
 def load_aws_rds_mysql_param_group():
-    with open("rds-mysql5.7-param-group.csv", 'r') as f:
+    with open(os.path.dirname(__file__) + "/rds-mysql5.7-param-group.csv", 'r') as f:
         lines = f.readlines()
     dict_params = {}
     for line in lines:
@@ -15,7 +18,8 @@ def load_aws_rds_mysql_param_group():
             dict_params[name] = {"modifiable": modifiable, "data_type": data_type}
     return dict_params
 
-def read_file(file_name):
+def check_param(file_name):
+    # load aws default params
     dict_aws_params = load_aws_rds_mysql_param_group()
 
     with open(file_name, 'r') as f:
@@ -24,15 +28,14 @@ def read_file(file_name):
     for line in lines:
         line = line.strip()
         if line:
-            # print(line)
             try:
                 key, value = line.split('=')
                 if not key in dict_aws_params:
-                    print(f"Ignoring line {line} because it is not exsit in aws params")
+                    print(f"{line} : not exsit in aws params")
                     continue
                 
-                if dict_aws_params[key]["modifiable"] == "false":
-                    print(f"Ignoring line {line} because it can't be changed")
+                if dict_aws_params[key]["modifiable"] == "FALSE":
+                    print(f"{line} : can't be modified")
                     continue
                 
                 if dict_aws_params[key]["data_type"] == "string":
@@ -40,32 +43,22 @@ def read_file(file_name):
 
                 if dict_aws_params[key]["data_type"] == "integer":
                     if not value.isnumeric():
-                        print(f"Ignoring line {line} because it has invalid format")
+                        print(f"{line} : has invalid format(should be integer)")
                         continue
                 elif dict_aws_params[key]["data_type"] == "boolean":
-                    if value == "ON":
-                        value = "1"
-                    elif value == "OFF":
-                        value = "0"
-                
-                parameters.append({"ParameterName": key, "ParameterValue": value, "ApplyMethod": "immediate"})
+                    if value in ["ON", "OFF", "1", "0"]:
+                        continue
+                    else:
+                        print(f"{line} : has invalid formate(should be ON/OFF/1/0)")
             except ValueError:
                 print(f"Ignoring line {line} because it is not in the correct format")
-    return parameters
 
-def generate_json(name, desc, file_name):
-    parameters = read_file(file_name)
-    data = {"Parameters": parameters}
-    data["Name"] = name
-    data["Description"] = desc
-    with open('output.json', 'w') as f:
-        json.dump(data, f, indent=4)
+parser = argparse.ArgumentParser(description='--file_name')
+parser.add_argument('--file_name', '-f', help='file_name')
+args = parser.parse_args()
 
 if __name__ == '__main__':
-    name = "example"
-    desc = "This is an example"
-    file_name = "rds_param.txt"
-    # generate_json(name, desc, file_name)
-
-    print("Not complete yet.")
-    exit(0)
+    print(f'file_name: {args.file_name}')
+    print("------")
+    file_name = args.file_name
+    check_param(file_name)
